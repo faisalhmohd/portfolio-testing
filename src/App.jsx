@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import NavBar from './NavBar';
@@ -12,9 +12,13 @@ function MainScreen({ children }) {
 }
 
 function App() {
+  const [ isMenuVisible, setMenuVisible ] = useState(false);
   return (
     <MainScreen>
-      <NavBar />
+      <NavBar
+        isMenuVisible={isMenuVisible}
+        setMenuVisible={setMenuVisible}
+      />
     </MainScreen>
   );
 }
