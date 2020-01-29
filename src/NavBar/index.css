@@ -1,4 +1,27 @@
+/* NavMenu */
+
 .nv-NavMenu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: orange;
+  left: 0;
+  top: 100vh;
+  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -moz-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -ms-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -o-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+}
+
+.nv-NavMenu.visible {
+  top: 0;
+}
+
+/* NavMenuButton */
+
+.nv-NavMenuButton {
+  z-index: 2;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -16,11 +39,11 @@
   transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
 }
 
-.nv-NavMenu.visible {
+.nv-NavMenuButton.visible {
   transform: translate(-70%, -1400%);
 }
 
-.nv-NavMenu span {
+.nv-NavMenuButton span {
   background: black;
   width: 2.5px;
   height: 2.5px;
@@ -34,7 +57,7 @@
   transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.nv-NavMenu:hover span {
+.nv-NavMenuButton:hover span {
   width: 5px;
   height: 5px;
   transform: translate(-50%, -50%) !important;
