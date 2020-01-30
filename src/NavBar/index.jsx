@@ -15,9 +15,9 @@ const dotPositions = {
   }
 }
 
-function NavMenu() {
+function NavMenu({ isMenuVisible, setMenuVisible }) {
   return (
-    <div className="nv-NavMenu">
+    <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`} onClick={() => setMenuVisible(!isMenuVisible)}>
       <span style={{ transform: `translate(${ dotPositions.column.one }, ${ dotPositions.row.one })` }}></span>
       <span style={{ transform: `translate(${ dotPositions.column.two }, ${ dotPositions.row.one })` }}></span>
       <span style={{ transform: `translate(${ dotPositions.column.three }, ${ dotPositions.row.one })` }}></span>
@@ -33,11 +33,14 @@ function NavMenu() {
   );
 }
 
-function NavBar() {
+function NavBar({ isMenuVisible, setMenuVisible }) {
   return (
     <div className="nv-NavBar">
       NavBar
-      <NavMenu />
+      <NavMenu
+        isMenuVisible={isMenuVisible}
+        setMenuVisible={setMenuVisible}
+      />
     </div>
   )
 }
