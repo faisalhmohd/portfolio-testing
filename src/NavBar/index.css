@@ -1,13 +1,23 @@
 .nv-NavMenu {
-  position: absolute;
-  bottom: 60px;
-  right: 40px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   border-radius: 100%;
   border: 1px solid;
   padding: 10px;
   width: 40px;
   height: 40px;
   text-align: center;
+  transform: translate(-70%, -100%);
+  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -moz-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -ms-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -o-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+}
+
+.nv-NavMenu.visible {
+  transform: translate(-70%, -1400%);
 }
 
 .nv-NavMenu span {
