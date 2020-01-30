@@ -1,37 +1,24 @@
 import React from 'react';
 
 function MenuItems() {
+  const items = [
+    'Helias',
+    'Hoboken Yogi',
+    'Buzzworthy',
+    'Gatto',
+    'Snooze'
+  ];
+
   return (
     <ul className="nv-NavMenu-items">
-      <li>
-        <a>
-          Helias
-        </a>
-      </li>
-      <br />
-      <li>
-        <a>
-          Hoboken Yogi
-        </a>
-      </li>
-      <br />
-      <li>
-        <a>
-          Buzzworthy
-        </a>
-      </li>
-      <br />
-      <li>
-        <a>
-          Gatto
-        </a>
-      </li>
-      <br />
-      <li>
-        <a>
-          Snooze
-        </a>
-      </li>
+      {items.map(item => (
+        <React.Fragment>
+          <li>
+            <a>{ item }</a>
+          </li>
+          <br />
+        </React.Fragment>
+      ))}
     </ul>
   );
 }
