@@ -11,6 +11,7 @@
   bottom: 0;
   right: 60px;
   z-index: 5;
+  height: 0;
 }
 
 .grd div:first-of-type {
