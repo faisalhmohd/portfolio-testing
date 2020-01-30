@@ -1,0 +1,31 @@
+.nv-NavMenu {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+  border-radius: 100%;
+  border: 1px solid;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.nv-NavMenu span {
+  background: black;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+.nv-NavMenu:hover span {
+  width: 5px;
+  height: 5px;
+  top: 50% !important;
+  left: 50% !important;
+}
