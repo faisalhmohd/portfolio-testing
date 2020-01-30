@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
 
-function NavBar() {
+import NavBar from './NavBar';
+
+function MainScreen({ children }) {
   return (
-    <div className="nv">
-      <div>Hamburger menu</div>
+    <div className="minScrn">
+      { children }
     </div>
   );
 }
 
 function App() {
   return (
-    <NavBar />
+    <MainScreen>
+      <NavBar />
+    </MainScreen>
   );
 }
 
