@@ -23,15 +23,15 @@
 .nv-NavMenuButton {
   z-index: 2;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 60px;
+  right: 40px;
   border-radius: 100%;
   border: 1px solid;
   padding: 10px;
   width: 40px;
   height: 40px;
   text-align: center;
-  transform: translate(-70%, -100%);
+  transform: translate(-50%, -50%);
   -webkit-transition: all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
   -moz-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
   -ms-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
@@ -40,7 +40,7 @@
 }
 
 .nv-NavMenuButton.visible {
-  transform: translate(-70%, -1400%);
+  bottom: 85%;
 }
 
 .nv-NavMenuButton span {
