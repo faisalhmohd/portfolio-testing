@@ -18,7 +18,7 @@ const dotPositions = {
 function NavMenu({ isMenuVisible }) {
   return (
     <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`}>
-      Nav Menu
+      Nav bar
     </div>
   );
 }
@@ -41,9 +41,9 @@ function NavMenuButton({ isMenuVisible, setMenuVisible }) {
   );
 }
 
-function NavMenuItems({ isMenuVisible }) {
+function NavItems({ isMenuVisible }) {
   return (
-    <ul className={`nv-NavMenuItems ${ isMenuVisible && 'visible' }`}>
+    <ul className={`nv-NavItems ${ isMenuVisible && 'visible' }`}>
       <li>
         <a className="active">About</a>
       </li>
@@ -63,7 +63,7 @@ function NavMenuItems({ isMenuVisible }) {
 function NavBar({ isMenuVisible, setMenuVisible }) {
   return (
     <div className="nv-NavBar">
-      <NavMenuItems isMenuVisible={isMenuVisible} />
+      <NavItems isMenuVisible={isMenuVisible} />
       <NavMenuButton
         isMenuVisible={isMenuVisible}
         setMenuVisible={setMenuVisible}
