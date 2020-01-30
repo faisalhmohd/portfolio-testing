@@ -5,19 +5,33 @@ function NavMenu({ isMenuVisible }) {
     <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`}>
       <ul className="nv-NavMenu-items">
         <li>
-          Helias
+          <a>
+            Helias
+          </a>
         </li>
+        <br />
         <li>
-          Hoboken Yogi
+          <a>
+            Hoboken Yogi
+          </a>
         </li>
+        <br />
         <li>
-          Buzzworthy
+          <a>
+            Buzzworthy
+          </a>
         </li>
+        <br />
         <li>
-          Gatto
+          <a>
+            Gatto
+          </a>
         </li>
+        <br />
         <li>
-          Snooze
+          <a>
+            Snooze
+          </a>
         </li>
       </ul>
     </div>
