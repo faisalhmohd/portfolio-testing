@@ -28,15 +28,15 @@
   -ms-transform: translateY(-50%);
   position: absolute;
   top: 50%;
-  left: 38%;
-  font-size: 5.6vw;
+  left: 39%;
+  font-size: 5.3vw;
   font-weight: normal;
   margin: 0;
   padding: 0;
 }
 
 .nv-NavMenu .nv-NavMenu-items li {
-  font-weight: 500;
+  font-weight: 600;
   display: block;
   position: relative;
 }
