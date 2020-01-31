@@ -42,14 +42,84 @@ function MenuItems({ hoveredItem, setHoveredItem }) {
   );
 }
 
-function ServiceList() {
+function ServiceList({ hoveredItem }) {
+  const serviceLists = [
+    {
+      key: 'one',
+      hoveredItem: 'Helias',
+      values: [
+        'User Experience',
+        'Web Design',
+        'Interactive'
+      ]
+    },
+    {
+      key: 'two',
+      hoveredItem: 'Hoboken Yogi',
+      values: [
+        'Art Direction',
+        'User Experience',
+        'Web Design',
+        'Interactive',
+        'Front-end'
+      ]
+    },
+    {
+      key: 'three',
+      hoveredItem: 'Buzzworthy',
+      values: [
+        'Brand Strategy',
+        'Brand Design',
+        'Art Direction',
+        'User Experience',
+        'Web Design',
+        'Interactive',
+        'Front-end'
+      ]
+    },
+    {
+      key: 'four',
+      hoveredItem: 'Gatto',
+      values: [
+        'Art Direction',
+        'User Experience',
+        'Web Design'
+      ]
+    },
+    {
+      key: 'five',
+      hoveredItem: 'Snooze',
+      values: [
+        'Brand Strategy',
+        'Brand Design',
+        'Art Direction',
+        'User Experience',
+        'Web Design'
+      ]
+    }
+  ];
+
   return (
     <div className="nv-NavMenu-ServiceList">
-      <div className="nv-NavMenu-ServiceList-default">
+      <div className={`nv-NavMenu-ServiceList-default ${ hoveredItem && 'hidden' }`}>
         <span>
           Service
         </span>
       </div>
+      {serviceLists.map(serviceList => {
+        const isCurrentItemHovered = hoveredItem && hoveredItem === serviceList.hoveredItem;
+
+        return (
+          <div
+            className={`nv-NavMenu-ServiceList-items ${serviceList.key} ${ isCurrentItemHovered && 'visible' }`}
+            key={serviceList.key}
+          >
+            {serviceList.values.map(value => (
+              <div key={value}><span>{ value }</span></div>
+            ))}
+          </div>
+        )
+      })}
     </div>
   );
 }
@@ -59,7 +129,7 @@ function NavMenu({ isMenuVisible }) {
   return (
     <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`}>
       <MenuItems hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} />
-      <ServiceList />
+      <ServiceList hoveredItem={hoveredItem} />
     </div>
   );
 }
