@@ -219,11 +219,84 @@
 
 /* NavMenuButton */
 
+.nv-NavMenuButton .nv-NavMenuButton-label span:nth-of-type(1) {
+  line-height: 0;
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-label span:nth-of-type(1) {
+  opacity: 0;
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-label span:nth-of-type(2) {
+  opacity: 1;
+}
+
 .nv-NavMenuButton {
+  cursor: pointer;
   z-index: 5;
   position: fixed;
   bottom: 60px;
-  right: 40px;
+  right: 130px;
+  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -moz-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -ms-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  -o-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
+  transform: rotateZ(90deg) translateX(0);
+  -moz-transform: rotateZ(90deg) translateX(0);
+  -webkit-transform: rotateZ(90deg) translateX(0);
+  -o-transform: rotateZ(90deg) translateX(0);
+  -ms-transform: rotateZ(90deg) translateX(0);
+  transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+}
+
+.nv-NavMenuButton-label {
+  font-size: .75em;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: -webkit-transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition: -webkit-transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition: transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  transition: transform 800ms cubic-bezier(1, 0, 0.115, 0.995), -webkit-transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  -webkit-transition: transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  -moz-transition: transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  -o-transition: transform 800ms cubic-bezier(1, 0, 0.115, 0.995);
+  line-height: 60px;
+  transform: translate(-180%, 50%);
+  -moz-transform: translate(-180%, 50%);
+  -webkit-transform: translate(-180%, 50%);
+  -o-transform: translate(-180%, 50%);
+  -ms-transform: translate(-180%, 50%);
+  will-change: transform;
+}
+
+.nv-NavMenuButton-label span {
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-label span {
+  transform: translate(530%, 5%);
+  -moz-transform: translate(530%, 5%);
+  -webkit-transform: translate(530%, 5%);
+  -o-transform: translate(530%, 5%);
+  -ms-transform: translate(530%, 5%);
+}
+
+.nv-NavMenuButton-label span:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+}
+
+.nv-NavMenuButton-icon {
   border-radius: 100%;
   border: 1px solid white;
   padding: 10px;
@@ -231,18 +304,13 @@
   height: 40px;
   text-align: center;
   transform: translate(-50%, -50%);
-  -webkit-transition: all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
-  -moz-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
-  -ms-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
-  -o-transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
-  transition:  all 1000ms cubic-bezier(1, 0, 0.115, 0.995);
 }
 
 .nv-NavMenuButton.visible {
   bottom: 85%;
 }
 
-.nv-NavMenuButton span {
+.nv-NavMenuButton-icon span {
   background: white;
   width: 2.5px;
   height: 2.5px;
@@ -256,7 +324,7 @@
   transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.nv-NavMenuButton:hover span {
+.nv-NavMenuButton-icon:hover span {
   width: 5px;
   height: 5px;
   transform: translate(-50%, -50%) !important;
