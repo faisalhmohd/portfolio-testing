@@ -304,6 +304,11 @@
   height: 40px;
   text-align: center;
   transform: translate(-50%, -50%);
+  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .nv-NavMenuButton.visible {
@@ -328,6 +333,28 @@
   width: 5px;
   height: 5px;
   transform: translate(-50%, -50%) !important;
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-icon {
+  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  background: white;
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-icon span {
+  -webkit-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  background: black;
+}
+
+.nv-NavMenuButton.visible .nv-NavMenuButton-icon span:nth-of-type(2), .nv-NavMenuButton.visible .nv-NavMenuButton-icon span:nth-of-type(4), .nv-NavMenuButton.visible .nv-NavMenuButton-icon span:nth-of-type(6), .nv-NavMenuButton.visible .nv-NavMenuButton-icon span:nth-of-type(8) {
+  opacity: 0;
 }
 
 /* NavItems */
