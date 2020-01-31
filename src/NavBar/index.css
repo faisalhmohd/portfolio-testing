@@ -455,3 +455,14 @@
   -o-transform: rotateZ(90deg) translateY(-130%);
   -ms-transform: rotateZ(90deg) translateY(-130%);
 }
+
+@media only screen and (max-width: 1150px) {
+  .grd, .nv-NavMenu-ServiceList, .nv-NavMenu-MenuItemIndex {
+    display: none;
+  }
+
+  .nv-NavMenu-items {
+    font-size: 7vw;
+    left: 0;
+  }
+}
