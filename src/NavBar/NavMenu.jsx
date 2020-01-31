@@ -207,7 +207,7 @@ function ImageDistortion({ hoveredItem, currentMousePosition }) {
             return (
               <image
                 xlinkHref={ image.imageHref }
-                style={{ opacity: isCurrentItemHovered ? 1 : 0 }}
+                style={{ opacity: isCurrentItemHovered ? 0.6 : 0 }}
                 key={image.hovered}
               />
             );
