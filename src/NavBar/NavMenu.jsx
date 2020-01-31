@@ -124,12 +124,50 @@ function ServiceList({ hoveredItem }) {
   );
 }
 
+function MenuItemIndex({ hoveredItem }) {
+  const indexes = [
+    {
+      hoveredItem: 'Helias',
+      value: '01'
+    },
+    {
+      hoveredItem: 'Hoboken Yogi',
+      value: '02'
+    },
+    {
+      hoveredItem: 'Buzzworthy',
+      value: '03'
+    },
+    {
+      hoveredItem: 'Gatto',
+      value: '04'
+    },
+    {
+      hoveredItem: 'Snooze',
+      value: '05'
+    }
+  ];
+  return (
+    <div className="nv-NavMenu-MenuItemIndex">
+      <span className={`nv-NavMenu-MenuItemIndex-default ${ hoveredItem && 'fade' }`}>05</span>
+      {indexes.map(index => {
+        const isCurrentItemHovered = hoveredItem && hoveredItem === index.hoveredItem;
+
+        return (
+          <span key={index.hoveredItem} className={isCurrentItemHovered ? 'visible' : ''}>{ index.value }</span>
+        );
+      })}
+    </div>
+  );
+}
+
 function NavMenu({ isMenuVisible }) {
   const [ hoveredItem, setHoveredItem ] = useState(false);
   return (
     <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`}>
       <MenuItems hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} />
       <ServiceList hoveredItem={hoveredItem} />
+      <MenuItemIndex hoveredItem={hoveredItem} />
     </div>
   );
 }
