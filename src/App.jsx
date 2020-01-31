@@ -11,10 +11,21 @@ function MainScreen({ children }) {
   );
 }
 
+function Grid() {
+  return (
+    <div className="grd">
+      <div />
+      <div />
+      <div />
+    </div>
+  );
+}
+
 function App() {
   const [ isMenuVisible, setMenuVisible ] = useState(false);
   return (
     <MainScreen>
+      <Grid />
       <NavBar
         isMenuVisible={isMenuVisible}
         setMenuVisible={setMenuVisible}
