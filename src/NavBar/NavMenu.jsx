@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function MenuItems({ hoveredItem, setHoveredItem }) {
+function MenuItems({ hoveredItem, setHoveredItem, setCurrentMousePosition }) {
   const items = [
     'Helias',
     'Hoboken Yogi',
@@ -30,6 +30,7 @@ function MenuItems({ hoveredItem, setHoveredItem }) {
                 className={itemClassName}
                 onMouseEnter={() => setHoveredItem(item)}
                 onMouseLeave={() => setHoveredItem(false)}
+                onMouseMove={e => { e.persist(); setCurrentMousePosition({ x: e.clientX, y: e.clientY }) }}
               >
                 { item }
               </a>
@@ -161,13 +162,79 @@ function MenuItemIndex({ hoveredItem }) {
   );
 }
 
+function ImageDistortion({ hoveredItem, currentMousePosition }) {
+  const images = [
+    {
+      hoveredItem: 'Helias',
+      imageHref: 'images/project-thumb-helias.jpg'
+    },
+    {
+      hoveredItem: 'Hoboken Yogi',
+      imageHref: 'images/project-thumb-hy.jpg'
+    },
+    {
+      hoveredItem: 'Buzzworthy',
+      imageHref: 'images/project-thumb-buzzworthy.jpg'
+    },
+    {
+      hoveredItem: 'Gatto',
+      imageHref: 'images/project-thumb-gatto.jpg'
+    },
+    {
+      hoveredItem: 'Snooze',
+      imageHref: 'images/project-thumb-snooze.jpg'
+    },
+  ];
+
+  return (
+    <div
+      className="nv-NavMenu-ImageDistortion-wrapper"
+    >
+      <svg
+        className="nv-NavMenu-ImageDistortion"
+        width="600"
+        height="428"
+        viewBox="0 0 600 500"
+        style={{
+          transform: `translateX(${currentMousePosition.x}px) translateY(${currentMousePosition.y}px)`}}>
+        <filter id="imageDistortionFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.29143e-13" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
+        </filter>
+        <g filter="url(#imageDistortionFilter)" x="0" y="0">
+          {images.map(image => {
+            const isCurrentItemHovered = hoveredItem && hoveredItem === image.hoveredItem;
+            return (
+              <image
+                xlinkHref={ image.imageHref }
+                style={{ opacity: isCurrentItemHovered ? 1 : 0 }}
+                key={image.hovered}
+              />
+            );
+          })}
+        </g>
+      </svg>
+    </div>
+  );
+}
+
 function NavMenu({ isMenuVisible }) {
   const [ hoveredItem, setHoveredItem ] = useState(false);
+  const [ currentMousePosition, setCurrentMousePosition ] = useState({ x: 0, y: 0 });
+
   return (
     <div className={`nv-NavMenu ${ isMenuVisible && 'visible' }`}>
-      <MenuItems hoveredItem={hoveredItem} setHoveredItem={setHoveredItem} />
+      <MenuItems
+        hoveredItem={hoveredItem}
+        setHoveredItem={setHoveredItem}
+        setCurrentMousePosition={setCurrentMousePosition}
+      />
       <ServiceList hoveredItem={hoveredItem} />
       <MenuItemIndex hoveredItem={hoveredItem} />
+      <ImageDistortion
+        hoveredItem={hoveredItem}
+        currentMousePosition={currentMousePosition}
+      />
     </div>
   );
 }
