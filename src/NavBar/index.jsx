@@ -41,10 +41,29 @@ function NavMenuButton({ isMenuVisible, setMenuVisible }) {
   );
 }
 
+function NavMenuItems({ isMenuVisible }) {
+  return (
+    <ul className={`nv-NavMenuItems ${ isMenuVisible && 'visible' }`}>
+      <li>
+        <a className="active">About</a>
+      </li>
+      <li>
+        <a>Work</a>
+      </li>
+      <li>
+        <a>Services</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </ul>
+  );
+}
+
 function NavBar({ isMenuVisible, setMenuVisible }) {
   return (
     <div className="nv-NavBar">
-      NavBar
+      <NavMenuItems isMenuVisible={isMenuVisible} />
       <NavMenuButton
         isMenuVisible={isMenuVisible}
         setMenuVisible={setMenuVisible}
